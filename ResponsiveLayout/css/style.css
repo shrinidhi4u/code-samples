@@ -1,0 +1,59 @@
+html,body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+.topNav {
+    width: 100%;
+    height: 50px;
+    background-color: IndianRed;
+}
+
+.topNav li {
+    float: left;
+    height: 100%;
+    width: 100px;
+    line-height: 50px;
+    border-right: solid 1px Maroon;
+    list-style-type: none;
+    text-align: center;
+}
+
+.topNav a {
+    color: Maroon;
+    text-decoration: none;
+}
+
+.topNav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    box-sizing: border-box;
+    height: 100%;
+    margin-top: -50px;
+    padding-top: 50px;
+}
+
+.mainContent {
+    width: 75%;
+    height: 100%;
+    background-color: Wheat;
+    float: left;
+}
+
+.rightSidebar {
+    width: 25%;
+    height: 100%;
+    background-color: Teal;
+    float: right;
+}
+
+@media ( min-width : 992px) {
+}
