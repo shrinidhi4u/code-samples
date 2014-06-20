@@ -9,18 +9,16 @@ ul {
     margin: 0;
     padding: 0;
 }
+
 .topNav {
     width: 100%;
-    height: 50px;
     background-color: IndianRed;
 }
 
 .topNav li {
-    float: left;
     height: 100%;
     width: 100px;
     line-height: 50px;
-    border-right: solid 1px Maroon;
     list-style-type: none;
     text-align: center;
 }
@@ -36,24 +34,87 @@ ul {
 
 .container {
     box-sizing: border-box;
-    height: 100%;
-    margin-top: -50px;
-    padding-top: 50px;
+    min-height: 100%;
+    height: 0px; /* Without specifying height, children of min-height elements wont honor % height */
 }
 
 .mainContent {
-    width: 75%;
     height: 100%;
     background-color: Wheat;
-    float: left;
+}
+
+.mainContent > label {
+    font-size : 30px;
+    text-align: center;
+    display: none;
+    color: #404040;
 }
 
 .rightSidebar {
-    width: 25%;
     height: 100%;
     background-color: Teal;
-    float: right;
 }
 
+/* Desktops */
 @media ( min-width : 992px) {
+    .mainContent > label.desktop {
+        display : block;
+    }
+    .topNav ul {
+        height: 50px;
+    }
+    .topNav li {
+        float: left;
+        border-right: 1px solid Maroon;
+    }
+    .container {
+        margin-top: -50px;
+        padding-top: 50px;
+    }
+    .mainContent {
+        width: 75%;
+        float: left;
+    }
+    .rightSidebar {
+        width: 25%;
+        float: right;
+    }
+}
+
+/* Tablets */
+@media ( min-width : 768px ) and ( max-width : 991px) {
+    .mainContent > label.tablet {
+        display : block;
+    }
+    .topNav ul {
+        height: 50px;
+    }
+    .mainContent {
+        width: 100%;
+    }
+    .container {
+        margin-top: -50px;
+        padding-top: 50px;
+    }
+    .topNav li {
+        float: left;
+        border-right: solid 1px Maroon;
+    }
+    .rightSidebar {
+        display: none;
+    }
+}
+
+/* Phones */
+@media ( max-width : 768px ) {
+    .topNav li {
+        width: 100%;
+        border-bottom: 1px solid Maroon;
+    }
+    .mainContent > label.phone {
+        display : block;
+    }
+    .rightSidebar {
+        display: none;
+    }
 }
