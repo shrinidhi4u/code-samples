@@ -2,7 +2,6 @@ var slide = 1;
 
 Slides = {
     showSlide : function(ev) {
-        console.log("Show slide : " + history.state);
         if (history.state != null && history.state != "") {
             slide = history.state;
             var px = "-" + $(window).height() * (slide - 1) + "";
@@ -41,5 +40,6 @@ Slides = {
         console.log("At load : " + history.state);
         document.addEventListener("keyup", Slides.handleKeyPress);
         window.addEventListener("popstate", this.showSlide);
+        this.showSlide();
     }
 };
