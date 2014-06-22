@@ -88,3 +88,7 @@ html, body {
 .slideContent li {
     padding: 10px;
 }
+
+.notes {
+    float: right;
+}

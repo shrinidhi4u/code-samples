@@ -10,9 +10,17 @@
     <div class="slideWrapper">
         <div class="slide">
             <section>
+                <aside class="notes">
+                    <label>To go to prev/next slide : </label>
+                    <ul>
+                        <li>Use Arrow keys, or</li>
+                        <li>Tap/click on upper/lower half of the screen</li>
+                    </ul>
+                </aside> 
                 <label class="maintitle">HTML5 Slides Demo</label>
                 <br/><br/>
                 <label class="subtitle">~ Shrinidhi Shastri</label>
+                <br/>
             </section>
         </div>
     </div>
@@ -61,7 +69,7 @@
     <script src="./js/slides.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            Slides.register(); 
+            new window.Slides(); 
         });
     </script>
 </body>
