@@ -12,6 +12,36 @@
             this.setupEvents();
             this.showSlide();
         },
+        setupEvents : function() {
+            var self = this;
+            $(document).on("keyup", function(ev) {
+                self.handleKeyPress(ev)
+            });
+            $(document).on("popstate", function(ev) {
+                self.showSlide(ev)
+            });
+            $(document).on("click", function(evt) {
+                if (evt.pageY < ($(window).height() / 2)) {
+                    self.goBack();
+                } else {
+                    self.goForward();
+                }
+            });
+            $(document).on("touchend", function(evt) {
+                var yPos = evt.originalEvent.changedTouches[0].pageY;
+                if (yPos < ($(window).height() / 2)) {
+                    self.goBack();
+                } else {
+                    self.goForward();
+                }
+            });
+            $(window).resize(function(ev) {
+                clearTimeout($.data(this, 'resizeTimer'));
+                $.data(this, 'resizeTimer', setTimeout(function() {
+                    self.showSlide(ev);
+                }, 250));
+            });
+        },
         showSlide : function(ev) {
             if (Modernizr.history && history.state != null
                     && history.state != "") {
@@ -54,27 +84,6 @@
                 slide += 1;
                 history.pushState(slide, "Slide " + slide, "#" + slide);
             }
-        },
-        setupEvents : function() {
-            var self = this;
-            $(document).on("keyup", function(ev){self.handleKeyPress(ev)});
-            $(document).on("popstate", function(ev){self.showSlide(ev)});
-            $(document).on("click", function(evt) {
-                if (evt.pageY < ($(window).height() / 2)) {
-                    self.goBack();
-                } else {
-                    self.goForward();
-                }
-            });
-            
-            $(document).on("touchend", function(evt) {
-                var yPos = evt.originalEvent.changedTouches[0].pageY;
-                if (yPos < ($(window).height() / 2)) {
-                    self.goBack();
-                } else {
-                    self.goForward();
-                }
-            })
         }
     };
 
