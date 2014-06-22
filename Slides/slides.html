@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Slide Show</title>
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body class="slideshow">
+    <div id="slides">
+    <div class="slideWrapper">
+        <div class="slide">
+            <section>
+                <label class="maintitle">HTML5 Slides Demo</label>
+                <br/><br/>
+                <label class="subtitle">~ Shrinidhi Shastri</label>
+            </section>
+        </div>
+    </div>
+    <div class="slideWrapper">
+        <div class="slide">
+            <section>
+                <label class="title">HTML5</label>
+                <article class="slideContent">
+                    <ul>
+                        <li>Semantic Structural Elements</li>
+                        <li>Multimedia - Audio/Video</li>
+                        <li>Graphics - SVG/Canvas</li>
+                        <li>Client side Storage</li>
+                        <li>Drag and Drop, History API, etc.</li>
+                    </ul>
+                </article>
+            </section>
+        </div>
+    </div>
+    <div class="slideWrapper">
+        <div class="slide">
+            <section>
+                <label class="title">CSS3</label>
+                <article class="slideContent">
+                    <ul>
+                        <li>Animation</li>
+                        <li>Transition</li>
+                        <li>2D/3D Transformations</li>
+                        <li>Custom Fonts</li>
+                        <li>Selctors</li>
+                    </ul>
+                </article>
+            </section>
+        </div>
+    </div>
+    <div class="slideWrapper">
+        <div class="slide">
+            <section>
+                <label class="title">Thank You!</label>
+            </section>
+        </div>
+    </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="./js/slides.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            Slides.register(); 
+        });
+    </script>
+</body>
+</html>
