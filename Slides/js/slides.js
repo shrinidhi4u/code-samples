@@ -21,7 +21,7 @@ Slides = {
                         top : "-=" + height
                     });
                     slide += 1;
-                    history.pushState(slide, "Slide " + slide, "/slide#"
+                    history.pushState(slide, "Slide " + slide, "#"
                             + slide);
                 }
             } else if (ev.keyCode == 37) {
@@ -31,7 +31,7 @@ Slides = {
                         top : "+=" + height
                     });
                     slide -= 1;
-                    history.pushState(slide, "Slide " + slide, "/slide#"
+                    history.pushState(slide, "Slide " + slide, "#"
                             + slide);
                 }
             }
