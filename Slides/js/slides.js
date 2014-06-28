@@ -38,9 +38,9 @@
             $win.on("popstate", function(ev) {
                 self.goToSlide(ev.originalEvent.state, false);
             });
-            $win.on("click", function(evt) {
+            $win.on("click", function(ev) {
                 ev.stopPropagation();
-                if (evt.clientX < ($(window).width() / 2)) {
+                if (ev.clientX < ($(window).width() / 2)) {
                     self.goBack();
                 } else {
                     self.goForward();
