@@ -120,3 +120,61 @@ html, body {
 .notes {
     float: right;
 }
+
+/* Tablets */
+@media ( min-width : 768px ) and ( max-width : 991px) {
+    .slideWrapper {
+        padding: 20px;
+    }
+    .slide{
+        padding: 10px;
+    }
+    .slide > section {
+        padding: 20px;
+    }
+    .title, .maintitle {
+        font-size : 26pt;
+        padding: 10px;
+    }
+    .subtitle {
+        padding: 5px;
+        font-size: 15pt;
+    }
+    
+    .slideContent {
+        font-size : 20pt;
+    }
+    
+    .slideContent li {
+        padding: 7px;
+    }
+}
+
+/* Phones */
+@media ( max-width : 768px ) {
+    .slideWrapper {
+        padding: 10px;
+    }
+    .slide{
+        padding: 5px;
+    }
+    .slide > section {
+        padding: 10px;
+    }
+    .title, .maintitle {
+        font-size : 18pt;
+        padding: 10px;
+    }
+    .subtitle {
+        padding: 5px;
+        font-size: 14pt;
+    }
+    
+    .slideContent {
+        font-size : 14pt;
+    }
+    
+    .slideContent li {
+        padding: 2px;
+    }
+}
