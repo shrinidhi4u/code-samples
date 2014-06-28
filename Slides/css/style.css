@@ -3,6 +3,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 #slides {
@@ -16,8 +17,29 @@ html, body {
 }
 
 .slideshow {
-    background-color : ghostWhite;
-    overflow: hidden;
+   background-color : ghostWhite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes slideshow {
+    from {
+        opacity: 0;
+        -ms-transform: rotate(360deg) scale(0,0); /* IE 9 */
+        -webkit-transform: rotate(360deg) scale(0,0); /* Chrome, Safari, Opera */
+        transform: rotate(360deg) scale(0,0);
+    }
+    to {
+        opacity: 0.9;
+        -ms-transform: rotate(0deg) scale(1,1); /* IE 9 */
+        -webkit-transform: rotate(0deg) scale(1,1); /* Chrome, Safari, Opera */
+        transform: rotate(0deg) scale(1,1);
+    }
+}
+
+/* Standard syntax */
+@keyframes slideshow {
+    from {opacity: 0.3;}
+    to {opacity: 1;}
 }
 
 .slideWrapper {
@@ -27,12 +49,18 @@ html, body {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    overflow: hidden;
+    display: none;
+}
+.slideWrapper.selected { 
+    display: block;
+    -webkit-animation: slideshow ease-out 0.5s; /* Chrome, Safari, Opera */
+    animation: slideshow 1s;
 }
 
 .slide {
     padding: 10px;
     height: 100%;
-    width : 100%;
     border: 1px solid lightgray;
     box-shadow: 5px 5px 8px rgba(0,0,0,0.4);
     border-radius : 10px 10px 10px 10px;
