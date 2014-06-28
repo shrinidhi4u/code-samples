@@ -39,14 +39,16 @@
                 self.goToSlide(ev.originalEvent.state, false);
             });
             $win.on("click", function(evt) {
+                ev.stopPropagation();
                 if (evt.clientX < ($(window).width() / 2)) {
                     self.goBack();
                 } else {
                     self.goForward();
                 }
             });
-            $win.on("touchend", function(evt) {
-                var xPos = evt.originalEvent.changedTouches[0].clientX;
+            $win.on("touchend", function(ev) {
+                ev.stopPropagation();
+                var xPos = ev.originalEvent.changedTouches[0].clientX;
                 if (xPos < ($(window).width() / 2)) {
                     self.goBack();
                 } else {
